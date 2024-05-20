@@ -15,17 +15,17 @@ public class ModelQuanLyNhanVien {
     private String HoTen;
     private String GioiTinh;
     private String ChucVu;
-    private int SoDT;
+    private String SoDT;
     private String Email;
     private Date NgaySinh;
     private String DiaChi;
     private String MaQuyen;
-    private float Luong;
+    private String Luong;
 
     public ModelQuanLyNhanVien() {
     }
 
-    public ModelQuanLyNhanVien(String MaNhanVien, String HoTen, String GioiTinh, String ChucVu, int SoDT, String Email, Date NgaySinh, String DiaChi, String MaQuyen, float Luong) {
+    public ModelQuanLyNhanVien(String MaNhanVien, String HoTen, String GioiTinh, String ChucVu, String SoDT, String Email, Date NgaySinh, String DiaChi, String MaQuyen, String Luong) {
         this.MaNhanVien = MaNhanVien;
         this.HoTen = HoTen;
         this.GioiTinh = GioiTinh;
@@ -70,11 +70,11 @@ public class ModelQuanLyNhanVien {
         this.ChucVu = ChucVu;
     }
 
-    public int getSoDT() {
+    public String getSoDT() {
         return SoDT;
     }
 
-    public void setSoDT(int SoDT) {
+    public void setSoDT(String SoDT) {
         this.SoDT = SoDT;
     }
 
@@ -110,14 +110,15 @@ public class ModelQuanLyNhanVien {
         this.MaQuyen = MaQuyen;
     }
 
-    public float getLuong() {
+    public String getLuong() {
         return Luong;
     }
 
-    public void setLuong(float Luong) {
+    public void setLuong(String Luong) {
         this.Luong = Luong;
     }
 
+    
     
     
 }

@@ -338,6 +338,9 @@
                   <Color blue="cc" green="99" red="ff" type="rgb"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jpChuaDanhSachSPMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
