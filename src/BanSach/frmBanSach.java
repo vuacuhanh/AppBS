@@ -59,7 +59,7 @@ public class frmBanSach extends javax.swing.JPanel {
     }
 
     private void KetNoi() {
-        connection = ketNoi.getConnection();
+        connection = KetNoi.getKetNoi();
     }
 
     private void HienThiCSDL() {

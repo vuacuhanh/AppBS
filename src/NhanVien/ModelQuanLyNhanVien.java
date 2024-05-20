@@ -13,6 +13,7 @@ import java.util.Date;
 public class ModelQuanLyNhanVien {
     private String MaNhanVien;
     private String HoTen;
+    private String GioiTinh;
     private String ChucVu;
     private int SoDT;
     private String Email;
@@ -24,9 +25,10 @@ public class ModelQuanLyNhanVien {
     public ModelQuanLyNhanVien() {
     }
 
-    public ModelQuanLyNhanVien(String MaNhanVien, String HoTen, String ChucVu, int SoDT, String Email, Date NgaySinh, String DiaChi, String MaQuyen, float Luong) {
+    public ModelQuanLyNhanVien(String MaNhanVien, String HoTen, String GioiTinh, String ChucVu, int SoDT, String Email, Date NgaySinh, String DiaChi, String MaQuyen, float Luong) {
         this.MaNhanVien = MaNhanVien;
         this.HoTen = HoTen;
+        this.GioiTinh = GioiTinh;
         this.ChucVu = ChucVu;
         this.SoDT = SoDT;
         this.Email = Email;
@@ -50,6 +52,14 @@ public class ModelQuanLyNhanVien {
 
     public void setHoTen(String HoTen) {
         this.HoTen = HoTen;
+    }
+
+    public String getGioiTinh() {
+        return GioiTinh;
+    }
+
+    public void setGioiTinh(String GioiTinh) {
+        this.GioiTinh = GioiTinh;
     }
 
     public String getChucVu() {
@@ -107,5 +117,7 @@ public class ModelQuanLyNhanVien {
     public void setLuong(float Luong) {
         this.Luong = Luong;
     }
+
+    
     
 }

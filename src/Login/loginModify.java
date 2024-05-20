@@ -15,7 +15,7 @@ public class loginModify {
     public ModelTaiKhoan login(String tdn, String mk) {
         String sql = "SELECT * FROM TAIKHOAN WHERE TenDangNhap = ? AND MatKhau = ?";
         try (
-            Connection connection = new KetNoi().getConnection();
+            Connection connection = new KetNoi().getKetNoi();
             PreparedStatement ps = connection.prepareStatement(sql);
         ) {
             ps.setString(1, tdn);
