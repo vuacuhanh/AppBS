@@ -69,7 +69,7 @@ public class ChuyenManHinhController {
                 case "QLHoaDon":
                     node = new frmQLHD();
                     break;
-                case "QLTaiKhoan":
+                case "QLNhanVien":
                     node = new frmQuanLyNhanVien();
                     break;
                 case "ThongKe":

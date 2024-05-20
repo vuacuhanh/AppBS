@@ -8,6 +8,7 @@ import SanPham.panelSanPham;
 import KetNoiDaTaBase.KetNoi;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,6 +16,8 @@ import java.sql.DriverManager;
 import java.util.Vector;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
@@ -59,7 +62,7 @@ public class frmBanSach extends javax.swing.JPanel {
     }
 
     private void KetNoi() {
-        connection = ketNoi.getConnection();
+        connection = KetNoi.getKetNoi();
     }
 
     private void HienThiCSDL() {
@@ -255,6 +258,11 @@ public class frmBanSach extends javax.swing.JPanel {
         panelBorder4.setBackground(new java.awt.Color(250, 242, 206));
 
         jpChuaDanhSachSP.setBackground(new java.awt.Color(255, 153, 204));
+        jpChuaDanhSachSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpChuaDanhSachSPMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpChuaDanhSachSPLayout = new javax.swing.GroupLayout(jpChuaDanhSachSP);
         jpChuaDanhSachSP.setLayout(jpChuaDanhSachSPLayout);
@@ -370,6 +378,33 @@ public class frmBanSach extends javax.swing.JPanel {
     private void btnSeachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeachActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSeachActionPerformed
+
+    //Lỏoo
+    private void jpChuaDanhSachSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpChuaDanhSachSPMouseClicked
+        // TODO add your handling code here:
+        int rowIndex = tbListSach.getSelectedRow();
+        int columnIndexForImagePath = 7; // Cột chứa đường dẫn hình ảnh
+
+        if (rowIndex >= 0) {
+            String imagePath = tbListSach.getValueAt(rowIndex, columnIndexForImagePath).toString();
+            hienThiHinhAnh(imagePath);
+        }
+    }//GEN-LAST:event_jpChuaDanhSachSPMouseClicked
+
+    //Lỏooo
+    private void hienThiHinhAnh(String imagePath) {
+        jpChuaDanhSachSP.removeAll();
+        jpChuaDanhSachSP.revalidate();
+        jpChuaDanhSachSP.repaint();
+        
+        JLabel label = new JLabel();
+        
+        ImageIcon imageIcon = new ImageIcon(imagePath);
+        Image image = imageIcon.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        label.setIcon(new ImageIcon(image));
+        
+        jpChuaDanhSachSP.add(label);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
